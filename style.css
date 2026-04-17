@@ -8,12 +8,13 @@
 
 body.title {
     background-image: url(Map.png);
-    background-size:100% 100%;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
 }
+
 body.info {
     background-image: url(water-texture.png);
     background-size: 30px;
@@ -22,6 +23,7 @@ body.info {
     background-attachment: fixed;
     margin: 0;
 }
+
 body.gameplay {
     background-image: url(grass-texture.png);
     background-size: 650px;
@@ -63,52 +65,53 @@ h1 {
 
 #start:hover {
     background-color: var(--button-color-prim);
-    color: var(var(--button-color-sec));
+    color: var(--button-color-sec);
     cursor: pointer;
 }
 
-/* info page */ 
+/* info page */
 /* input stuff */
 #lab {
     width: 570px;
     height: 50px;
-    background-color:var(--text-color);
-    border:none;
+    background-color: var(--text-color);
+    border: none;
     font-size: 30px;
 }
 
 #classmate {
     width: 570px;
     height: 50px;
-    background-color:var(--text-color);    border:none;
+    background-color: var(--text-color);
+    border: none;
     font-size: 30px;
 }
 
 #teacher {
     width: 570px;
     height: 50px;
-    background-color:var(--text-color);    border:none;
+    background-color: var(--text-color);
+    border: none;
     font-size: 30px;
 }
 
-#play { /* text wont align, need help fixing!!! */
+#play {
     width: 302px;
-    height: 95px;
+    height: 55px;
+    display: block;
     font-size: 40px;
     background-color: black;
     color: white;
     border: none;
-    display: flex;
     align-items: center;
+    text-decoration: none;
+    padding-top: 20px;
     align-self: center;
-    text-align: center;
-    margin-left: 500px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 50px;
-    margin-bottom: auto;
-    text-decoration: none;
-    border: none;
-    text-decoration: none;
 }
+
 
 
 #play:hover {
@@ -127,7 +130,7 @@ div.info {
     margin-left: auto;
     margin-right: auto;
     font-size: 40px;
-    
+
 }
 
 div.game1 img {
@@ -142,15 +145,38 @@ div.game1 img {
     margin-top: auto;
 }
 
-div.game1 p {
+/*
+.game1 p {
     display: block;
-    width: 975px;
-    height: 245px;
-    font-size: 40px;
-    background-image: url(dialouge.png);
+    font-size: 30px;
     text-align: center;
-    padding-top: 60px;
-    padding-left: 20px;
+    margin-top: 80px;
+    max-width: 700px;
+    padding: 90px;
+    margin-top: -3px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(dialouge.png);
+    background-size: 880px;
+}
+ */
 
+.dialouge {
+    height: 130px;
+    width: 1290px;
+    font-size: 20px;
+    padding: 20px;
+    width: 500px;
+    word-wrap: break-word;
+    margin-top: -300px;
+    background-image: url(dialouge.png);
+    background-size: 541px;
+}
 
+button {
+    height: 30px;
+    width: 90px;
+    background-color: white;
+    margin-top: -30px;
+    margin-left: 400px;
 }

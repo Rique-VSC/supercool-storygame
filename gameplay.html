@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,43 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Jersey 20' rel='stylesheet'>
 </head>
+
 <body class="gameplay">
     <div class="game1">
         <img src="game1.png">
-        <p>Today is the day you get to go out on your Pokemon journey in the CART region! 
-            This is your town, [CART lab], and today is the day you leave to adventure!</p>
+        <!-- <p>Today is the day you get to go out on your Pokemon journey in the CART region!
+            This is your town, [CART lab], and today is the day you leave to adventure!</p> -->
     </div>
+    <dialog class="dialouge" open>
+        <p>Who would you like to join you on your journey?</p>
+        <form method="dialog">
+            <button onclick=""><a href="starter.html">NEXT</a></button>
+            <!-- fix link -->
+        </form>
+    </dialog>
+    <dialog class="dialouge" open>
+        <p>You also meet your classmate [student] at the lab,
+            who is also starting their Pokemon journey as well.
+            [student] insists you go first to choose your partner.</p>
+        <form method="dialog">
+            <button>NEXT</button>
+        </form>
+    </dialog>
+    <dialog class="dialouge" open>
+        <p>You make your way towards the laboratory, where you meet Professor [teacher name].
+            He will let you pick your very first Pokemon.</p>
+        <form method="dialog">
+            <button>NEXT</button>
+        </form>
+    </dialog>
+    <dialog class="dialouge" open>
+        <p>Today is the day you get to go out on your Pokemon journey in the CART region!
+            This is your town, [CART lab], and today is the day you leave to adventure!</p>
+        <form method="dialog">
+            <button>NEXT</button>
+        </form>
+    </dialog>
 
-    
-    
 </body>
+
 </html>
