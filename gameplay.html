@@ -7,19 +7,33 @@
     <title>Cart Adventure | Gameplay!</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Jersey 20' rel='stylesheet'>
+    <script src="app.js"></script>
 </head>
 
 <body class="gameplay">
     <div class="game1">
-        <img src="game1.png">
-        <!-- <p>Today is the day you get to go out on your Pokemon journey in the CART region!
-            This is your town, [CART lab], and today is the day you leave to adventure!</p> -->
+        <img id="image" src="bg1.png">
+
+        <dialog class="dialouge" open>
+            <p>You make your way towards the laboratory, where you meet Professor [teacher name].
+                They will let you pick your very first Pokemon.</p>
+            <form method="dialog">
+                <button id="btn">NEXT</button>
+            </form>
+        </dialog>
+        <dialog class="dialouge" open>
+            <p>Today is the day you get to go out on your Pokemon journey in the CART region!
+                This is your town, [CART lab], and today is the day you leave to adventure!</p>
+            <form method="dialog">
+                <button>NEXT</button>
+            </form>
+        </dialog>
+
+
     </div>
-    <dialog class="dialouge" open>
+    <!-- <dialog class="dialouge" open>
         <p>Who would you like to join you on your journey?</p>
         <form method="dialog">
-            <button onclick=""><a href="starter.html">NEXT</a></button>
-            <!-- fix link -->
         </form>
     </dialog>
     <dialog class="dialouge" open>
@@ -29,21 +43,7 @@
         <form method="dialog">
             <button>NEXT</button>
         </form>
-    </dialog>
-    <dialog class="dialouge" open>
-        <p>You make your way towards the laboratory, where you meet Professor [teacher name].
-            He will let you pick your very first Pokemon.</p>
-        <form method="dialog">
-            <button>NEXT</button>
-        </form>
-    </dialog>
-    <dialog class="dialouge" open>
-        <p>Today is the day you get to go out on your Pokemon journey in the CART region!
-            This is your town, [CART lab], and today is the day you leave to adventure!</p>
-        <form method="dialog">
-            <button>NEXT</button>
-        </form>
-    </dialog>
+    </dialog> --> <!-- this section will not be used for now -->
 
 </body>
 

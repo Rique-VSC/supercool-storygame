@@ -133,7 +133,7 @@ div.info {
 
 }
 
-div.game1 img {
+#image {
     width: 1324px;
     height: 920px;
     display: flex;
@@ -144,22 +144,6 @@ div.game1 img {
     margin-right: auto;
     margin-top: auto;
 }
-
-/*
-.game1 p {
-    display: block;
-    font-size: 30px;
-    text-align: center;
-    margin-top: 80px;
-    max-width: 700px;
-    padding: 90px;
-    margin-top: -3px;
-    margin-left: auto;
-    margin-right: auto;
-    background-image: url(dialouge.png);
-    background-size: 880px;
-}
- */
 
 .dialouge {
     height: 130px;
@@ -179,4 +163,14 @@ button {
     background-color: white;
     margin-top: -30px;
     margin-left: 400px;
+}
+
+button:hover {
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
