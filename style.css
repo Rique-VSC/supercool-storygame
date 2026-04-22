@@ -187,31 +187,70 @@ a {
 #starter-pick {
     display: flex;
     justify-content: space-between;
+    justify-items: center;
     align-items: center;
-    margin-left: 850px;
-    margin-right: 950px;
+    margin-left: 700px;
+    margin-right: 700px;
+    margin-top: -700px;
 }
 .litten {
     display: block;
-    width: 900px;
-    height: 120px;
-    background-color: aquamarine;
-    
+    width: 250px;
+    height: 500px;
+    background-color: rgb(255, 152, 35);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 #lit {
     width: 95px;
     height: 105px;
     max-width: fit-content; 
-    
-    
+}
+#lit:hover {
+    width: 100px;
+    height: 110px;
+    transition: 0.5s;
+}
+.froakie {
+    display: block;
+    width: 250px;
+    height: 500px;
+    background-color: rgb(255, 236, 127);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #frk {
     width: 100px;
     height: 90px;
     margin: 0;
 }
+.treecko {
+    display: block;
+    width: 250px;
+    height: 500px;
+    background-color: rgb(150, 127, 255);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#frk:hover {
+    width: 105px;
+    height: 95px;
+    transition: 0.5s;
+}
 #tck {
     width: 80px;
     height: 95px;
     margin: 0;
+}
+#tck:hover {
+    width: 85px;
+    height: 100px;
+    transition: 0.5s;
 }
