@@ -19,11 +19,33 @@ const scenes = {
     intro3: {
         dialogue: "You also meet your classmate [student] at the lab, who is also starting their Pokemon journey as well. [student] insists you go first to choose your partner.",
         background: "bg2.png",
-        next: "starterChoice"
+        next: "starterOption"
     },
 
-    starterChoice: {
-
+    starterOption: {
+        dialogue: "Who would you like to join you on your journey?",
+        background: "bg2.png",
+        options: [
+            {
+                text: "Litten",
+                action: () => gameState.starter = "Litten",
+                next: "chosen"
+            },
+            {
+                text: "Froakie",
+                action: () => gameState.starter = "Froakie",
+                next: "chosen"
+            },
+            {
+                text: "Treecko",
+                action: () => gameState.starter = "Treecko",
+                next: "chosen"
+            }
+        ]
+    },
+    chosen: {
+        text: () => `You chose a ...${gameState.starter}!`,
+        background: "bg2.png"
     }
 }
 
@@ -54,8 +76,6 @@ const nextBtn = document.getElementById("nextBtn");
 function loadScene(sceneKey) {
     const scene = scenes[sceneKey];
 
-    nameEl.textContent = scene.name || "";
-
     dialogueEl.textContent =
         typeof scene.dialogue === "function"
             ? scene.dialogue()
@@ -71,11 +91,11 @@ function loadScene(sceneKey) {
 
         scene.options.forEach(options => {
             const btn = document.createElement("button");
-            btn.textContent = choice.dialogue;
+            btn.textContent = options.dialogue;
 
             btn.onclick = () => {
                 if (options.action) options.action();
-                currentScene = choice.next;
+                currentScene = options.next;
                 loadScene(currentScene);
             };
 

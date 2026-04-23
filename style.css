@@ -180,12 +180,17 @@ a {
     margin-top: -300px;
     background-image: url(dialouge.png);
     background-size: 538px;
-    max-width: fit-content;
     color: black;
     align-items: center;
     justify-content: center;
     background-position: center;
-    margin-left: auto;
+    margin-left: 900px;
     margin-right: auto;
 
+}
+
+#options button {
+    display: block;
+    margin: 5px 0;
+    position: absolute;
 }
