@@ -184,7 +184,7 @@ a {
 
 
 /*starter/pokemon pick */
-#starter-pick {
+/* #starter-pick {
     display: flex;
     justify-content: space-between;
     justify-items: center;
@@ -253,4 +253,4 @@ a {
     width: 85px;
     height: 100px;
     transition: 0.5s;
-}
+} */
