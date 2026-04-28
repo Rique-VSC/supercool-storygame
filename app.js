@@ -178,7 +178,7 @@ const scenes = {
         
         dialogue: `You chose to fight ...Wynaut!`,
         background: "route1.png",
-        next: "Wynautfight",
+        next: "Wynautfight", 
     },
     
 
