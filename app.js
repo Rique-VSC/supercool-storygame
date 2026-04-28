@@ -324,8 +324,34 @@ CatchMunchlax:{
 Munchlaxrun:{ 
 dialogue: `You successfully ran away from Munchlax...`,
         background: "blackscreen.jpg",
-    }
+        next: "routetwo1",
+    },
 
+//route 2!!!
+routetwo1:{
+dialogue: `After your first battle and getting a new comrade, you reach route 2: Berry Woods.`,
+background: "route2.png",
+next: "routetwo2",
+
+}, 
+
+routetwo2:{
+    dialogue: `This area is a forest filled with unique Pokemon. You and your Pokemon decided to rest for a while in this nice environment, so you sit around underneath a tree. `,
+    background: "route2.png",
+    next: "routetwo3",
+    }, 
+
+    routetwo3: {
+        dialogue: ` But suddenly, you hear the bushes rustling close by.`,
+        background: "route2.png",
+        next: "routetwo4",
+    },
+
+    routetwo4: {
+        dialouge: `You notice there are three Pokemon hiding in the bush and preparing a battle with you! `,
+        background: "route2.png",
+        next: "routetwo5",
+    },
 
 }
 
