@@ -12,7 +12,7 @@ const starterThemes = {
     normal: "#c9c9c9",
     fighting: "#e9a125"
 };
-
+ 
 function setStarterTheme(pokemonName) {
     const color = starterThemes[pokemonName] || "white";
     document.documentElement.style.setProperty("--starter-color", color);
@@ -345,7 +345,7 @@ nextBtn.onclick = () => {
 };
 
 loadScene(currentScene);
-
+ 
 
 
 
