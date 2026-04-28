@@ -31,6 +31,15 @@ function fiftyfifty() {
     return result;
 }
 
+function capture() {
+    let result = 'failed to capture';
+    if (Math.random() < .5 )  {
+        result = 'caught';
+    }
+    return result;
+}
+
+
 
 const scenes = {
     captured: {
@@ -186,11 +195,13 @@ const scenes = {
     catchWynaut: {
         dialogue: `You chose to catch ...Wynaut!`,
         background: "route1.png",
+        next: "Wynautcapture",
     },
 
     runFromWynaut: {
-        dialogue: `You chose to flee from ...Wynaut!`,
+        dialogue: `You attempted to flee from ...Wynaut!`,
         background: "route1.png",
+        next: "RunawayWynaut",
     },
 
 
@@ -200,6 +211,16 @@ const scenes = {
         background: "route1.png",
     },
     
+    Wynautcapture: {
+
+        dialogue: `You ${capture()} Wynaut!`,
+        background: "route1.png",
+    },
+
+    RunawayWynaut: {
+        dialogue: `You successfully ran away from Wynaut...`,
+        background: "blackscreen.jpg",
+    },
 
 
     // cubone option
@@ -224,16 +245,36 @@ const scenes = {
     fightCubone: {
         dialogue: `You chose to fight ...Cubone!`,
         background: "route1.png",
+        next: "Cubonefight"
     },
     catchCubone: {
         dialogue: `You chose to catch ...Cubone!`,
         background: "route1.png",
+        next: "Cubonecapture",
     },
     runFromCubone: {
-        dialogue: `You chose to flee from ...Cubone!`,
+        dialogue: `You attempted to flee from ...Cubone!`,
         background: "route1.png",
+        next: "Cubonerun",
     },
 
+    Cubonefight: {
+        dialogue: `You ${fiftyfifty()} against Cubone!`,
+        background: "route1.png", 
+    },
+
+    Cubonecapture: {
+
+        dialogue: `You ${capture()} Cubone!`,
+        background: "route1.png", 
+    },
+
+    Cubonerun: {
+        
+        dialogue: `You successfully ran away from Cubone...`,
+        background: "blackscreen.jpg",
+
+    },
 
     // munchlax option
     chosenMunchlax: {
@@ -257,15 +298,35 @@ const scenes = {
     fightMunchlax: {
         dialogue: `You chose to fight ...Munchlax!`,
         background: "route1.png",
+        next: "Munchlaxfight"
     },
     catchMunchlax: {
         dialogue: `You chose to catch ...Munchlax!`,
         background: "route1.png",
+        next: "CatchMunchlax",
     },
     runFromMunchlax: {
-        dialogue: `You chose to flee from ...Munchlax!`,
+        dialogue: `You attempted to flee from ...Munchlax!`,
         background: "route1.png",
+        next: "Munchlaxrun",
     },
+
+
+Munchlaxfight:{
+    dialogue: `You ${fiftyfifty()} against Munchlax!`,
+        background: "route1.png", 
+},
+
+CatchMunchlax:{
+    dialogue: `You ${capture()} Munchlax!`,
+        background: "route1.png", 
+},
+Munchlaxrun:{ 
+dialogue: `You successfully ran away from Munchlax...`,
+        background: "blackscreen.jpg",
+    }
+
+
 }
 
 
