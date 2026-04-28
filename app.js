@@ -345,7 +345,7 @@ nextBtn.onclick = () => {
 };
 
 loadScene(currentScene);
- 
+
 
 
 
