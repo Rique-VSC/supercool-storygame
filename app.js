@@ -28,7 +28,7 @@ const starterThemes = {
     normal: "#c9c9c9",
     fighting: "#e9a125"
 };
- 
+
 function setStarterTheme(pokemonName) {
     const color = starterThemes[pokemonName] || "white";
     document.documentElement.style.setProperty("--starter-color", color);
@@ -44,7 +44,7 @@ const gameState = {
 
 function fiftyfifty() {
     let result = 'lost';
-    if (Math.random() < .5 )  {
+    if (Math.random() < .5) {
         result = 'won';
     }
     return result;
@@ -52,7 +52,7 @@ function fiftyfifty() {
 
 function capture() {
     let result = 'failed to capture';
-    if (Math.random() < .5 )  {
+    if (Math.random() < .5) {
         result = 'caught';
     }
     return result;
@@ -109,7 +109,7 @@ function updateInventory() {
         slot.classList.add("pokemon-slot");
 
         slot.textContent = pokemon;
-        
+
         inventory.appendChild(slot);
     });
 
@@ -134,7 +134,7 @@ const scenes = {
         background: "route1.png",
         next: "routeOne1"
     },
-   
+
 
     intro: {
         dialogue: `Today is the day you get to go out on your Pokemon journey in the CART region! This is your town, ${playerData.lab}, and today is the day you leave to adventure!`,
@@ -190,10 +190,6 @@ const scenes = {
             }
         ]
     },
-    
-   
-
-    
 
 
     chosenStarter: {
@@ -206,6 +202,41 @@ const scenes = {
         background: "bg2.png",
         next: "routeOne1"
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //route 1!!!!
     routeOne1: {
         dialogue: "You reach route 1: Grassy Terrains. It has a large field of yellow patches of grass.",
         background: "route1.png",
@@ -250,11 +281,12 @@ const scenes = {
     //wynaut option
     chosenWynaut: {
         dialogue: "A wild Wynaut has appeared! What will you do?",
+        img: "wynaut.png", //doesnt work, fix later
         background: "route1.png",
         options: [
             {
                 text: "Fight",
-                next: "fightWynaut" 
+                next: "fightWynaut"
             },
             {
                 text: "Catch",
@@ -266,15 +298,15 @@ const scenes = {
             }
         ]
 
-       
+
     },
     fightWynaut: {
-        
+
         dialogue: `You chose to fight ...Wynaut!`,
         background: "route1.png",
-        next: "Wynautfight",   
+        next: "Wynautfight",
     },
-    
+
 
 
     catchWynaut: {
@@ -297,16 +329,16 @@ const scenes = {
 
             this.nextScene = battle.next;
 
-            return  battle.text;
+            return battle.text;
         },
-            
+
         background: "route1.png",
 
         next: function () {
             return this.nextScene;
         }
     },
-    
+
     Wynautcapture: {
 
         dialogue: function () {
@@ -316,7 +348,7 @@ const scenes = {
 
             return captureResult.text;
         },
-        
+
         background: "route1.png",
 
         next: function () {
@@ -367,20 +399,40 @@ const scenes = {
     },
 
     Cubonefight: {
-        dialogue: `You ${fiftyfifty()} against Cubone!`,
+        dialogue: function () {
+            const battle = battlePokemon("Cubone", "routetwo1", "chosenCubone");
+
+            this.nextScene = battle.next;
+
+            return battle.text;
+        },
+
         background: "route1.png",
-        next: "routetwo1", 
+
+        next: function () {
+            return this.nextScene;
+        }
     },
 
     Cubonecapture: {
 
-        dialogue: `You ${capture()} Cubone!`,
-        background: "route1.png", 
-        next: "routetwo1",
+        dialogue: function () {
+            const captureResult = catchPokemon("Cubone", "routetwo1", "chosenCubone")
+
+            this.nextScene = captureResult.next;
+
+            return captureResult.text;
+        },
+
+        background: "route1.png",
+
+        next: function () {
+            return this.nextScene;
+        }
     },
 
     Cubonerun: {
-        
+
         dialogue: `You successfully ran away from Cubone...`,
         background: "blackscreen.jpg",
         next: "routetwo1",
@@ -422,39 +474,87 @@ const scenes = {
     },
 
 
-    Munchlaxfight:{
-        dialogue: `You ${fiftyfifty()} against Munchlax!`,
-        background: "route1.png", 
-        next: "routetwo1",
-},
+    Munchlaxfight: {
+        dialogue: function () {
+            const battle = battlePokemon("Munchlax", "routetwo1", "chosenMunchlax");
 
-    CatchMunchlax:{
-        dialogue: `You ${capture()} Munchlax!`,
-        background: "route1.png", 
-        next: "routetwo1",
-},
-    Munchlaxrun:{ 
+            this.nextScene = battle.next;
+
+            return battle.text;
+        },
+
+        background: "route1.png",
+
+        next: function () {
+            return this.nextScene;
+        }
+    },
+
+    CatchMunchlax: {
+        dialogue: function () {
+            const captureResult = catchPokemon("Munchlax", "routetwo1", "chosenMunchlax")
+
+            this.nextScene = captureResult.next;
+
+            return captureResult.text;
+        },
+
+        background: "route1.png",
+
+        next: function () {
+            return this.nextScene;
+        }
+    },
+    Munchlaxrun: {
         dialogue: `You successfully ran away from Munchlax...`,
         background: "blackscreen.jpg",
         next: "routetwo1",
     },
 
-//route 2!!!
-    routetwo1:{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //route 2!!!
+    routetwo1: {
         dialogue: `After your encounter, you reach route 2: Berry Woods.`,
         background: "route2.png",
         next: "routetwo2",
 
-    }, 
+    },
 
-    routetwo2:{
+    routetwo2: {
         dialogue: `This area is a forest filled with unique Pokemon. You and your Pokemon decided to rest for a while in this nice environment, so you sit around underneath a tree. `,
         background: "route2.png",
         next: "routetwo3",
-    }, 
+    },
 
     routetwo3: {
-        dialogue: ` But suddenly, you hear the bushes rustling close by.`,
+        dialogue: `But suddenly, you hear the bushes rustling close by.`,
         background: "route2.png",
         next: "routetwo4",
     },
@@ -465,7 +565,615 @@ const scenes = {
         next: "routetwo5",
     },
 
+    routetwo5: {
+        dialogue: `However, you can only fight one of them, so which would it be?`,
+        background: "route2.png",
+        options: [
+            {
+                text: "Fairy",
+                action: () => {
+                    gameState.currentEncounter = "Togepi";
+                    setStarterTheme("fairy");
+                },
+                next: "chosenTogepi"
+            },
+            {
+                text: "Rock",
+                action: () => {
+                    gameState.currentEncounter = "Bonsly";
+                    setStarterTheme("rock");
+                },
+                next: "chosenBonsly"
+            },
+            {
+                text: "Poision",
+                action: () => {
+                    gameState.currentEncounter = "Nidoran";
+                    setStarterTheme("poision");
+                },
+                next: "chosenNidoran"
+            }
+        ]
+    },
+
+    // togepi option
+    chosenTogepi: {
+        dialogue: "A wild Togepi has appeared! What will you do?",
+        background: "route2.png",
+        options: [
+            {
+                text: "Fight",
+                next: "fightTogepi"
+            },
+            {
+                text: "Catch",
+                next: "catchTogepi"
+            },
+            {
+                text: "Run",
+                next: "runFromTogepi"
+            }
+        ]
+    },
+    fightTogepi: {
+        dialogue: `You chose to fight ...Togepi!`,
+        background: "route2.png",
+        next: "Togepifight"
+    },
+    catchTogepi: {
+        dialogue: `You chose to catch ...Togepi!`,
+        background: "route2.png",
+        next: "Togepicapture",
+    },
+    runFromTogepi: {
+        dialogue: `You attempted to flee from ...Togepi!`,
+        background: "route2.png",
+        next: "Togepirun",
+    },
+
+
+    Togepifight: {
+        dialogue: function () {
+            const battle = battlePokemon("Togepi", "routethree1", "chosenTogepi");
+
+            this.nextScene = battle.next;
+
+            return battle.text;
+        },
+
+        background: "route2.png",
+
+        next: function () {
+            return this.nextScene;
+        }
+    },
+
+    Togepicapture: {
+
+        dialogue: function () {
+            const captureResult = catchPokemon("Togepi", "routethree1", "chosenTogepi")
+
+            this.nextScene = captureResult.next;
+
+            return captureResult.text;
+        },
+
+        background: "route2.png",
+
+        next: function () {
+            return this.nextScene;
+        }
+    },
+    Togepirun: {
+        dialogue: `You successfully ran away from Togepi...`,
+        background: "blackscreen.jpg",
+        next: "routethree1",
+    },
+
+
+
+
+
+    // Bonsly option
+    chosenBonsly: {
+        dialogue: "A wild Bonsly has appeared! What will you do?",
+        background: "route2.png",
+        options: [
+            {
+                text: "Fight",
+                next: "fightBonsly"
+            },
+            {
+                text: "Catch",
+                next: "catchBonsly"
+            },
+            {
+                text: "Run",
+                next: "runFromBonsly"
+            }
+        ]
+    },
+    fightBonsly: {
+        dialogue: `You chose to fight ...Bonsly!`,
+        background: "route2.png",
+        next: "Bonslyfight"
+    },
+    catchBonsly: {
+        dialogue: `You chose to catch ...Bonsly!`,
+        background: "route2.png",
+        next: "Bonslycapture",
+    },
+    runFromBonsly: {
+        dialogue: `You attempted to flee from ...Bonsly!`,
+        background: "route2.png",
+        next: "Bonslyrun",
+    },
+
+
+    Bonslyfight: {
+        dialogue: function () {
+            const battle = battlePokemon("Bonsly", "routethree1", "chosenBonsly");
+
+            this.nextScene = battle.next;
+
+            return battle.text;
+        },
+
+        background: "route2.png",
+
+        next: function () {
+            return this.nextScene;
+        }
+    },
+
+    Bonslycapture: {
+
+        dialogue: function () {
+            const captureResult = catchPokemon("Bonsly", "routethree1", "chosenBonsly")
+
+            this.nextScene = captureResult.next;
+
+            return captureResult.text;
+        },
+
+        background: "route2.png",
+
+        next: function () {
+            return this.nextScene;
+        }
+    },
+    Bonslyrun: {
+        dialogue: `You successfully ran away from Bonsly...`,
+        background: "blackscreen.jpg",
+        next: "routethree1",
+    },
+
+
+
+
+    // Nidoran option
+    chosenNidoran: {
+        dialogue: "A wild Nidoran has appeared! What will you do?",
+        background: "route2.png",
+        options: [
+            {
+                text: "Fight",
+                next: "fightNidoran"
+            },
+            {
+                text: "Catch",
+                next: "catchNidoran"
+            },
+            {
+                text: "Run",
+                next: "runFromNidoran"
+            }
+        ]
+    },
+    fightNidoran: {
+        dialogue: `You chose to fight ...Nidoran!`,
+        background: "route2.png",
+        next: "Nindoranfight"
+    },
+    catchNidoran: {
+        dialogue: `You chose to catch ...Nidoran!`,
+        background: "route2.png",
+        next: "Nidorancapture",
+    },
+    runFromNidoran: {
+        dialogue: `You attempted to flee from ...Nidoran!`,
+        background: "route2.png",
+        next: "Nidoranrun",
+    },
+
+
+    Nidoranfight: {
+        dialogue: function () {
+            const battle = battlePokemon("Nidoran", "routethree1", "chosenNidoran");
+
+            this.nextScene = battle.next;
+
+            return battle.text;
+        },
+
+        background: "route2.png",
+
+        next: function () {
+            return this.nextScene;
+        }
+    },
+
+    Nidorancapture: {
+
+        dialogue: function () {
+            const captureResult = catchPokemon("Nidoran", "routethree1", "chosenNidoran")
+
+            this.nextScene = captureResult.next;
+
+            return captureResult.text;
+        },
+
+        background: "route2.png",
+
+        next: function () {
+            return this.nextScene;
+        }
+    },
+    Nidoranrun: {
+        dialogue: `You successfully ran away from Nidoran...`,
+        background: "blackscreen.jpg",
+        next: "routethree1",
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //route THREEEEEEEE!!!
+        routethree1: {
+            dialogue: `Now you have reached route 3: Flatlands.`,
+            background: "route3.png",
+            next: "routethree2",
+    
+        },
+    
+        routethree2: {
+            dialogue: `This route is a large green field that's next to a river. The day is almost over and you decided to set up camp for the evening. The sky finally turned dark and you and your pokemon are resting for the night.`,
+            background: "route3.png",
+            next: "routethree3",
+        },
+    
+        routethree3: {
+            dialogue: `But suddenly you hear some noises disturbing you in the tall grass. `,
+            background: "route3.png",
+            next: "routethree4",
+        },
+    
+        routethree4: {
+            dialogue: ` In the dark there are now three Pokemon near you, and you could only battle one of them.`,
+            background: "route3.png",
+            next: "routethree5",
+        },
+    
+        routethree5: {
+            dialogue: `Which one would you choose?`,
+            background: "route3.png",
+            options: [
+                {
+                    text: "Fairy",
+                    action: () => {
+                        gameState.currentEncounter = "Togepi";
+                        setStarterTheme("fairy");
+                    },
+                    next: "chosenTogepi"
+                },
+                {
+                    text: "Rock",
+                    action: () => {
+                        gameState.currentEncounter = "Bonsly";
+                        setStarterTheme("rock");
+                    },
+                    next: "chosenBonsly"
+                },
+                {
+                    text: "Poision",
+                    action: () => {
+                        gameState.currentEncounter = "Nidoran";
+                        setStarterTheme("poision");
+                    },
+                    next: "chosenNidoran"
+                }
+            ]
+        },
+    
+        // togepi option
+        chosenTogepi: {
+            dialogue: "A wild Togepi has appeared! What will you do?",
+            background: "route2.png",
+            options: [
+                {
+                    text: "Fight",
+                    next: "fightTogepi"
+                },
+                {
+                    text: "Catch",
+                    next: "catchTogepi"
+                },
+                {
+                    text: "Run",
+                    next: "runFromTogepi"
+                }
+            ]
+        },
+        fightTogepi: {
+            dialogue: `You chose to fight ...Togepi!`,
+            background: "route2.png",
+            next: "Togepifight"
+        },
+        catchTogepi: {
+            dialogue: `You chose to catch ...Togepi!`,
+            background: "route2.png",
+            next: "Togepicapture",
+        },
+        runFromTogepi: {
+            dialogue: `You attempted to flee from ...Togepi!`,
+            background: "route2.png",
+            next: "Togepirun",
+        },
+    
+    
+        Togepifight: {
+            dialogue: function () {
+                const battle = battlePokemon("Togepi", "routethree1", "chosenTogepi");
+    
+                this.nextScene = battle.next;
+    
+                return battle.text;
+            },
+    
+            background: "route2.png",
+    
+            next: function () {
+                return this.nextScene;
+            }
+        },
+    
+        Togepicapture: {
+    
+            dialogue: function () {
+                const captureResult = catchPokemon("Togepi", "routethree1", "chosenTogepi")
+    
+                this.nextScene = captureResult.next;
+    
+                return captureResult.text;
+            },
+    
+            background: "route2.png",
+    
+            next: function () {
+                return this.nextScene;
+            }
+        },
+        Togepirun: {
+            dialogue: `You successfully ran away from Togepi...`,
+            background: "blackscreen.jpg",
+            next: "routethree1",
+        },
+    
+    
+    
+    
+    
+        // Bonsly option
+        chosenBonsly: {
+            dialogue: "A wild Bonsly has appeared! What will you do?",
+            background: "route2.png",
+            options: [
+                {
+                    text: "Fight",
+                    next: "fightBonsly"
+                },
+                {
+                    text: "Catch",
+                    next: "catchBonsly"
+                },
+                {
+                    text: "Run",
+                    next: "runFromBonsly"
+                }
+            ]
+        },
+        fightBonsly: {
+            dialogue: `You chose to fight ...Bonsly!`,
+            background: "route2.png",
+            next: "Bonslyfight"
+        },
+        catchBonsly: {
+            dialogue: `You chose to catch ...Bonsly!`,
+            background: "route2.png",
+            next: "Bonslycapture",
+        },
+        runFromBonsly: {
+            dialogue: `You attempted to flee from ...Bonsly!`,
+            background: "route2.png",
+            next: "Bonslyrun",
+        },
+    
+    
+        Bonslyfight: {
+            dialogue: function () {
+                const battle = battlePokemon("Bonsly", "routethree1", "chosenBonsly");
+    
+                this.nextScene = battle.next;
+    
+                return battle.text;
+            },
+    
+            background: "route2.png",
+    
+            next: function () {
+                return this.nextScene;
+            }
+        },
+    
+        Bonslycapture: {
+    
+            dialogue: function () {
+                const captureResult = catchPokemon("Bonsly", "routethree1", "chosenBonsly")
+    
+                this.nextScene = captureResult.next;
+    
+                return captureResult.text;
+            },
+    
+            background: "route2.png",
+    
+            next: function () {
+                return this.nextScene;
+            }
+        },
+        Bonslyrun: {
+            dialogue: `You successfully ran away from Bonsly...`,
+            background: "blackscreen.jpg",
+            next: "routethree1",
+        },
+    
+    
+    
+    
+        // Nidoran option
+        chosenNidoran: {
+            dialogue: "A wild Nidoran has appeared! What will you do?",
+            background: "route2.png",
+            options: [
+                {
+                    text: "Fight",
+                    next: "fightNidoran"
+                },
+                {
+                    text: "Catch",
+                    next: "catchNidoran"
+                },
+                {
+                    text: "Run",
+                    next: "runFromNidoran"
+                }
+            ]
+        },
+        fightNidoran: {
+            dialogue: `You chose to fight ...Nidoran!`,
+            background: "route2.png",
+            next: "Nindoranfight"
+        },
+        catchNidoran: {
+            dialogue: `You chose to catch ...Nidoran!`,
+            background: "route2.png",
+            next: "Nidorancapture",
+        },
+        runFromNidoran: {
+            dialogue: `You attempted to flee from ...Nidoran!`,
+            background: "route2.png",
+            next: "Nidoranrun",
+        },
+    
+    
+        Nidoranfight: {
+            dialogue: function () {
+                const battle = battlePokemon("Nidoran", "routethree1", "chosenNidoran");
+    
+                this.nextScene = battle.next;
+    
+                return battle.text;
+            },
+    
+            background: "route2.png",
+    
+            next: function () {
+                return this.nextScene;
+            }
+        },
+    
+        Nidorancapture: {
+    
+            dialogue: function () {
+                const captureResult = catchPokemon("Nidoran", "routethree1", "chosenNidoran")
+    
+                this.nextScene = captureResult.next;
+    
+                return captureResult.text;
+            },
+    
+            background: "route2.png",
+    
+            next: function () {
+                return this.nextScene;
+            }
+        },
+        Nidoranrun: {
+            dialogue: `You successfully ran away from Nidoran...`,
+            background: "blackscreen.jpg",
+            next: "routethree1",
+        },
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -518,11 +1226,11 @@ function loadScene(sceneKey) {
             btn.onclick = () => {
                 if (option.action) option.action();
                 if (option.next) {
-                //removed option.action(); seemed to let you continue after pressing fight.//
-                currentScene = option.next;
-                loadScene(currentScene);
-            }
-        };
+                    //removed option.action(); seemed to let you continue after pressing fight.//
+                    currentScene = option.next;
+                    loadScene(currentScene);
+                }
+            };
             optionsEl.appendChild(btn);
         });
 
@@ -542,12 +1250,12 @@ nextBtn.onclick = () => {
         typeof scene.next === "function"
             ? scene.next()
             : scene.next;
-    
+
     if (next) {
         currentScene = next;
         loadScene(currentScene);
     }
-        
+
 };
 
 

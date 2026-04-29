@@ -157,6 +157,17 @@ div.info {
 
 
 
+/* pokemon encounter img??? doesnt work. fix later */
+#img {
+    display: block;
+    background-color: #2ecc71;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-size: 200px;
+}
+
+
 
 /* gameplay */
 
@@ -208,11 +219,7 @@ a {
 
 
 
-#options button:first-child {
-    background-color: var(--fire);
-    color: white;
-
-}
+#options button:first-child {}
 
 #options {
     position: absolute;
@@ -311,7 +318,7 @@ a {
 .pokemon-slot {
     background: white;
     padding: 12px;
-    border-radius: 5px;
+    border: 2px solid black;
     min-height: 50px;
     font-size: 18px;
 }
@@ -336,6 +343,8 @@ a {
     width: 30px;
     display: block;
     margin: 0 auto;
+    max-width: 30px;
+    max-height: 30px;
 }
 
 
@@ -361,6 +370,7 @@ a {
     Width: 60px;
     height: 60px;
 }
- #openInventory img {
+
+#openInventory img {
     width: 30px;
- }
+}
