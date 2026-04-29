@@ -1,3 +1,19 @@
+const playerData = {
+    lab: localStorage.getItem("cartLab") || "Student",
+    classmate: localStorage.getItem("classmateName") || "CART lab",
+    teacher: localStorage.getItem("teacherName") || "Professor"
+};
+
+
+
+
+
+
+
+
+
+
+// gameplay down below
 const starterThemes = {
     fire: "#e74c3c",
     water: "#50caf6",
@@ -40,6 +56,36 @@ function capture() {
         result = 'caught';
     }
     return result;
+}
+
+// pokemon battle thingy
+function battlePokemon(pokemonName, nextRoute, retryScene) {
+    const result = fiftyfifty()
+
+    return {
+        result,
+        next: result === "won"
+            ? nextRoute
+            : retryScene,
+        text: `You ${result} against ${pokemonName}`
+    };
+}
+
+// pokemon catch thingy
+function catchPokemon(pokemonName, nextRoute, retryScene) {
+    const result = capture();
+
+    if (result === "caught") {
+        addPokemonToParty(pokemonName);
+    }
+
+    return {
+        result,
+        next: result ==="caught"
+            ? nextRoute
+            : retryScene,
+        text: `You ${result} ${pokemonName}`
+    };
 }
 
 // pokemon party 
@@ -88,19 +134,19 @@ const scenes = {
    
 
     intro: {
-        dialogue: "Today is the day you get to go out on your Pokemon journey in the CART region! This is your town, [CART lab], and today is the day you leave to adventure!",
+        dialogue: `Today is the day you get to go out on your Pokemon journey in the CART region! This is your town, ${playerData.lab}, and today is the day you leave to adventure!`,
         background: "bg1.png",
         next: "intro2"
     },
 
     intro2: {
-        dialogue: "You make your way towards the laboratory, where you meet Professor [teacher name]. They will let you pick your very first Pokemon.",
+        dialogue: `You make your way towards the laboratory, where you meet Professor ${playerData.teacher}. They will let you pick your very first Pokemon.`,
         background: "bg2.png",
         next: "intro3"
     },
 
     intro3: {
-        dialogue: "You also meet your classmate [student] at the lab, who is also starting their Pokemon journey as well. [student] insists you go first to choose your partner.",
+        dialogue: `You also meet your classmate ${playerData.classmate} at the lab, who is also starting their Pokemon journey as well. ${playerData.classmate} insists you go first to choose your partner.`,
         background: "bg2.png",
         next: "starterOption"
     },
@@ -507,49 +553,24 @@ loadScene(currentScene);
 
 
 
+//overlay thingy
+const overlay = document.getElementById("overlay");
+const openInventoryBtn = document.getElementById("openInventory");
+const closeInventoryBtn = document.getElementById("overlayBtn");
 
-// inventory function.... doesnt wporkm right now
-// document.addEventListener("DOMContentLoaded", () => {
-//     const overlay = document.getElementById("overlay");
-//     const showBtn = document.getElementById("showOverlay");
-//     const closeBtn = document.getElementById("closeOverlay");
-
-//     showBtn.addEventListener("click", () => {
-//     });
-//     closeBtn.addEventListener("click", () => {
-//         inventory.classList.add = "hidden";
-//     });
-    
-// });
-
-
-
-
-// pokemon battle thingy
-function battlePokemon(pokemonName, nextRoute, retryScene) {
-    const result = fiftyfifty()
-
-    return {
-        result,
-        next: result === "won"
-            ? nextRoute
-            : retryScene,
-        text: `You ${result} against ${pokemonName}`
-    };
+function openOverlay() {
+    overlay.classList.add("active");
 }
 
-// pokemon catch thingy
-function catchPokemon(pokemonName, nextRoute, retryScene) {
-    const result = capture();
+function closeOverlay() {
+    overlay.classList.remove("active");
+}
 
-    if (result === "caught") {
-        addPokemonToParty(pokemonName);
+openInventoryBtn.onclick = openOverlay;
+closeInventoryBtn.onclick = closeOverlay;
+
+overlay.onclick = (e) => {
+    if (e.target === overlay) {
+        closeOverlay();
     }
-
-    return {
-        next: result ==="caught"
-            ? nextRoute
-            : retryScene,
-        text: `You ${result} ${pokemonName}`
-    };
-}
+};

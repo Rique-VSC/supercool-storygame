@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Jersey 20' rel='stylesheet'>
 </head>
+
 <body class="info">
     <div class="info">
         <h2>Before Starting...</h2>
@@ -16,7 +18,29 @@
         <input type="text" id="classmate" name="classmate">
         <h3>Enter your CART teacher name:</h3>
         <input type="text" id="teacher" name="teacher">
-        <a href="gameplay.html" id="play">Play!</a>
+        <button id="play">Play!</button> <!-- fix this in css later -->
     </div>
 </body>
+
+<script>
+    const playBtn = document.getElementById("play");
+
+    playBtn.onclick = () => {
+        const lab = document.getElementById("lab").value;
+        const classmate = document.getElementById("classmate").value;
+        const teacher = document.getElementById("teacher").value;
+
+        localStorage.setItem("cartLab", lab);
+        localStorage.setItem("classmateName", classmate);
+        localStorage.setItem("teacherName", teacher);
+
+        window.location.href = "gameplay.html";
+
+        if (!lab || !classmate || !teacher) {
+            alert("Please fill out all fields... or else.");
+            return;
+        }
+    };
+</script>
+
 </html>
