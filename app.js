@@ -61,6 +61,9 @@ function capture() {
 // pokemon battle thingy
 function battlePokemon(pokemonName, nextRoute, retryScene) {
     const result = fiftyfifty()
+    if (result === "won") {
+        addPokemonToParty(pokemonName);
+    }
 
     return {
         result,
@@ -81,7 +84,7 @@ function catchPokemon(pokemonName, nextRoute, retryScene) {
 
     return {
         result,
-        next: result ==="caught"
+        next: result === "caught"
             ? nextRoute
             : retryScene,
         text: `You ${result} ${pokemonName}`
