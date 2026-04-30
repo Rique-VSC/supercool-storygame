@@ -141,25 +141,25 @@ const scenes = {
 
 
     intro: {
-        dialogue: `Today is the day you get to go out on your Pokemon journey in the CART region! This is your town, ${playerData.lab}, and today is the day you leave to adventure!`,
+        dialogue: `This is the day you get to pick your very own pokemon in the ${playerData.lab} region and start your very own adventure!`,
         background: "bg1.png",
         next: "intro2"
     },
 
     intro2: {
-        dialogue: `You make your way towards the laboratory, where you meet Professor ${playerData.teacher}. They will let you pick your very first Pokemon.`,
+        dialogue: `You make your way towards Professor ${playerData.teacher}s laboratory. This is where you choose your very first Pokemon.`,
         background: "bg2.png",
         next: "intro3"
     },
 
     intro3: {
-        dialogue: `You also meet your classmate ${playerData.classmate} at the lab, who is also starting their Pokemon journey as well. ${playerData.classmate} insists you go first to choose your partner.`,
+        dialogue: `You also meet your classmate ${playerData.classmate} at the lab, who is also starting their Pokemon journey as well. ${playerData.classmate} insists that you get the first pick.`,
         background: "bg2.png",
         next: "starterOption"
     },
 
     starterOption: {
-        dialogue: "Who would you like to join you on your journey?",
+        dialogue: "Who will become your first Pokemon companion?",
         background: "bg2.png",
         options: [
             {
@@ -202,7 +202,7 @@ const scenes = {
         next: "intro4"
     },
     intro4: {
-        dialogue: () => `You picked ${gameState.starter}! After your pick, ${playerData.classmate} picks theirs and you both go on your separate ways.`,
+        dialogue: () => `You picked ${gameState.starter}! Shortly after, ${playerData.classmate} picks theirs and you both go on your separate ways.`,
         background: "bg2.png",
         next: "routeOne1"
     },
@@ -242,17 +242,17 @@ const scenes = {
 
     //route 1!!!!
     routeOne1: {
-        dialogue: "You reach route 1: Grassy Terrains. It has a large field of yellow patches of grass.",
+        dialogue: "You reach route 1: Grassy Terrains. Its a large field with tall yellow patches of grass throughout the route.",
         background: "route1.png",
         next: "routeOne2"
     },
     routeOne2: {
-        dialogue: "You find three unique Pokemon, but you can't see them through all the tall grass! However, you could only battle one and catch one of them…",
+        dialogue: "You find three unique Pokemon, but you can't see them through all the tall grass!",
         background: "route1.png",
         next: "routeOne3"
     },
     routeOne3: {
-        dialogue: "There are three Pokemons hiding, which one should you encounter and catch?",
+        dialogue: "You must investigate... Which Pokemon will you encounter?",
         background: "route1.png",
         options: [
             {
@@ -561,26 +561,26 @@ const scenes = {
 
     //route 2!!!
     routetwo1: {
-        dialogue: `After your encounter, you reach route 2: Berry Woods.`,
+        dialogue: `You offically made it out of the Grassy Terrains, you have now arrived at route 2: Berry Woods.`,
         background: "route2.png",
         next: "routetwo2",
 
     },
 
     routetwo2: {
-        dialogue: `This area is a forest filled with unique Pokemon. You and your Pokemon decided to rest for a while in this nice environment, so you sit around underneath a tree. `,
+        dialogue: `This area is a forest that's filled with many unique Pokemon. You and your Pokemon decide to rest for a while in this nice environment, so you sit underneath a tree and relax. `,
         background: "route2.png",
         next: "routetwo3",
     },
 
     routetwo3: {
-        dialogue: `But suddenly, you hear the bushes rustling close by.`,
+        dialogue: `Your rest comes to a stop, as you hear the bushes rustling close by.`,
         background: "route2.png",
         next: "routetwo4",
     },
 
     routetwo4: {
-        dialogue: `You notice there are three Pokemon hiding in the bush and preparing a battle with you! `,
+        dialogue: `You notice that thre are three Pokemon in the bush, preparing to attack you! `,
         background: "route2.png",
         next: "routetwo5",
     },
@@ -890,26 +890,26 @@ const scenes = {
 
     //route THREEEEEEEE!!!
     routethree1: {
-        dialogue: `Now you have reached route 3: Flatlands.`,
+        dialogue: `After a very intense battle you reach route 3: Flatlands.`,
         background: "route3.png",
         next: "routethree2",
 
     },
 
     routethree2: {
-        dialogue: `This route is a large green field that's next to a river. The day is almost over and you decided to set up camp for the evening. The sky finally turned dark and you and your pokemon are resting for the night.`,
+        dialogue: `This route has a large green field that's next to a river. The sun is setting and you decided to set up camp for the night. The light sky finally fades. And you and your pokemon rest under the stars.`,
         background: "route3.png",
         next: "routethree3",
     },
 
     routethree3: {
-        dialogue: `But suddenly you hear some noises disturbing you in the tall grass. `,
+        dialogue: `suddenly, an unexpected rustling in the tall grass near you wakes you and your pokemon. `,
         background: "route3.png",
         next: "routethree4",
     },
 
     routethree4: {
-        dialogue: ` In the dark there are now three Pokemon near you, and you could only battle one of them.`,
+        dialogue: `It's hard to notice, but 3 pokemon are surrounding you, ready for a battle. But you could only battle one of them.`,
         background: "route3.png",
         next: "routethree5",
     },
