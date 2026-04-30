@@ -13,7 +13,7 @@
     --grass: #2ecc71;
     --electric: #ebd540;
     --ground: #876414;
-    --flying: d8fff8;
+    --flying: #d8fff8;
     --dark: #5a4a69;
     --psychic: #b98ee0;
     --fairy: #ffe0fd;
@@ -22,7 +22,7 @@
     --fighting: #e9a125;
     --bug: #4c8153;
     --steel: #777777;
-    --poision: #8a139a;
+    --poison: #8a139a;
     --ice: #86ffeb;
     --ghost: #a618ff;
     --rock: #44413d;
@@ -159,12 +159,14 @@ div.info {
 
 /* pokemon encounter img??? doesnt work. fix later */
 #img {
-    display: block;
-    background-color: #2ecc71;
+    display: none;
     position: absolute;
-    width: 200px;
-    height: 200px;
-    background-size: 200px;
+    width: 900px;
+    height: 400px;
+    object-fit: contain;
+    bottom: 300px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
@@ -215,17 +217,18 @@ a {
     color: black;
     transform: translateX(75%);
     bottom: 20px;
+    background-color: var(--starter-color);
 }
 
 
 
-#options button:first-child {}
 
 #options {
     position: absolute;
     bottom: 250px;
     left: 50%;
     transform: translateX(-50%);
+    margin-bottom: -60px;
     display: flex;
     gap: 50px;
 }
@@ -233,11 +236,12 @@ a {
 #options button {
     width: 100px;
     height: 170px;
-
+    background-color: var(--starter-color);
     border-radius: 0px;
     cursor: pointer;
     font-size: 14px;
     padding: 5px;
+    background-color: var(--starter-color);
 
 }
 
@@ -321,6 +325,7 @@ a {
     border: 2px solid black;
     min-height: 50px;
     font-size: 18px;
+    background-color: var(--starter-color);
 }
 
 
