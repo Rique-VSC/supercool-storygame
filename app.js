@@ -1442,7 +1442,7 @@ const scenes = {
             return this.nextScene;
         }
     },
-    Mareeprun: {
+    mareeprun: {
         dialogue: `You ran away from Mareep? Why would you do that..`,
         background: "blackscreen.jpg",
         next: "routefive1",
