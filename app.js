@@ -1527,200 +1527,12 @@ const scenes = {
     Hakamoorun: {
         dialogue: `You successfully ran away from Hakamo-o... there were no consequences.`,
         background: "blackscreen.jpg",
-        next: "routefour1",
+        next: "routefive1",
     },
 
 
 
-wrapup:{
-    dialogue: "You reached the end of your adventure, now it is time to return home",
-    background: "blackscreen.png",
-    next: function(){
-        if (gameState.starter === "Litten") {
-            return "endingv1";
-            } else if (gameState.starter === "Froakie") {
-            return "endingv2";
-            } else if (gameState.starter === "Treecko") {
-            return "endingv3";
-            return "end";
-    }
-    }
 
-
-
-},
-
-
-
-
-//endingv1//
-
-endingv1:{
-    dialogue: "Now you're on your way back to your hometown and notice a familiar figure in the distance",
-    background: "blackscreen.png",
-    next: "Professorend"
-},
-
-Professorend:{
-    dialogue: "Is that ${playerData.teacher}... $!?!?!",
-        background: "Professor-ending.png",
-        next: "Professoralt",
-
-},
-
-Professoralt: {
-    dialogue: "I’ve  heard about your recent journey! Battle me, I want to see how strong you’ve become!",
-    background: "teachtalkstoyou.png",
-    next: "Fightteach",
-},
-
-Fightteach: {
-     options: [
-            {
-                text: "Fight ${playerData.teacher}",
-                next: "fightingteach"
-            },
-        ]
-},
-
- fightingteach:{
-  dialogue: function () {
-            const battle = battlePokemon("${playerData.teacher}", "Fightingteachwin", "Fightingteachloss");
-
-            this.nextScene = battle.next;
-
-            return battle.text;
-        },
-
-        img: "teachtalkstoyou.png",
-
-        next: function () {
-            return this.nextScene;
-        }
- },
-
- Fightingteachwin: {
-    dialogue: "wow you and your Pokemon are really in sync! You have grown exponentially! ",
-    background: "teachtalksyou.png",
-    next: "end"
-
- },
-
- Fightingteachloss: {
-    dialogue: "You were really tough! It seems like you have more to learn but you’re not far from competing with the best of the best,keep going kid!",
-    background: "teachtalksyou.png",
-    next: "end",
- },
-
-//endingv2//
-
-endingv2: {
- dialogue: "Now you're on your way back to your hometown and notice a familiar figure in the distance",
-    background: "blackscreen.png",
-    next: "Friendending1",
-},
-
-Friendending1:{
-    dialogue: "Hey look it’s ${playerData.classmate}!",
-    background: "friend!.png",
-    next: "Friendfightp2",
-},
-
-
-Friendfightp2: {
-    dialogue: "Hey! Let’s have a battle, I want to see how strong you’ve become!",
-    background: "friend!.png",
-    next: "Friendfightp3",
-},
-
- Friendfightp3:{
-  dialogue: function () {
-            const battle = battlePokemon("${playerData.classmate}", "Friendfightwin", "Friendfightloss");
-
-            this.nextScene = battle.next;
-
-            return battle.text;
-        },
-
-        img: "Friendfight!.png",
-
-        next: function () {
-            return this.nextScene;
-        }
- },
-
-    Friendfightwin: {
-        dialogue: "It’s a shame that I lost but man, that was fun! We need to battle again soon!",
-        background: "Friendfight!.png",
-        next: "end",
-    },
-
-    Frienddightloss: {
-        dialogue: "I must’ve been lucky, what a tough fight!",
-        background: "Friendfight!.png",
-        next: "end",
-    },
-
-    //ending3//
-
-    endingv3:{
-        dialogue: "Now you're on your way back to your hometown and notice a familiar figure in the distance",
-        background: "blackscreen.png",
-        next: "motherencounter",
-    },
-
-    motherencounter:{
-        dialogue: "What is my mom doing here?",
-        background: "Mother.png",
-        next:"motherencounter1",
-
-    },
-motherencounter1: {
-    dialogue: "It looks like your mother is challenging you... to a battle!?!",
-    background: "Mother.png",
-    next: "motherencounter2",
-},
-
-motherencounter2: {
-    dialogue: "If you win you can choose dinner tonight!",
-    background: "Mother.png",
-    next: "motherencounter3",
-},
-
-motherencounter3: {
-
- dialogue: function () {
-            const battle = battlePokemon("Mom", "motherencounterwin", "motherencounterloss");
-
-            this.nextScene = battle.next;
-
-            return battle.text;
-        },
-
-        img: "Friendfight!.png",
-
-        next: function () {
-            return this.nextScene;
-        }
-},
-
-
-motherencounterwin:{
-    dialogue: "Well I’m a woman of my word, what do you want for dinner?",
-    background: "Mother.png",
-    next: "end",
-},
-
-motherencounterloss:{
-    dialogue: "Well now I get to choose what’s for dinner, loser!",
-    background: "Mother.png",
-    next: "end",
-},
-
-
-end: {
-    background: "THANKYOU.png",
-},
 
 
 
@@ -1868,7 +1680,7 @@ end: {
 
     Sogaleofight: {
         dialogue: function () {
-            const battle = battlePokemon("Sogaleo", "routefive1", "chosenSogaleo");
+            const battle = battlePokemon("Sogaleo", "wrapup", "chosenSogaleo");
 
             this.nextScene = battle.next;
 
@@ -1886,7 +1698,7 @@ end: {
     Sogaleocapture: {
 
         dialogue: function () {
-            const captureResult = catchPokemon("Sogaleo", "routefive1", "chosenSogaleo")
+            const captureResult = catchPokemon("Sogaleo", "wrapup", "chosenSogaleo")
 
             this.nextScene = captureResult.next;
 
@@ -1903,7 +1715,7 @@ end: {
     Sogaleorun: {
         dialogue: `You ran away from Solgaleo! It just stared at you..`,
         background: "blackscreen.jpg",
-        next: "routefive1",
+        next: "wrapup",
     },
 
 
@@ -1950,9 +1762,10 @@ end: {
     },
 
 
+
     Zygardefight: {
         dialogue: function () {
-            const battle = battlePokemon("Zygarde", "routefive1", "chosenZygarde");
+            const battle = battlePokemon("Zygarde", "wrapup", "chosenZygarde");
 
             this.nextScene = battle.next;
 
@@ -1970,7 +1783,7 @@ end: {
     Zygardecapture: {
 
         dialogue: function () {
-            const captureResult = catchPokemon("Zygarde", "routefive1", "chosenZygarde")
+            const captureResult = catchPokemon("Zygarde", "wrapup", "chosenZygarde")
 
             this.nextScene = captureResult.next;
 
@@ -1987,7 +1800,7 @@ end: {
     Zygarderun: {
         dialogue: `You ran from Zygarde! It laughed at you☹️`,
         background: "blackscreen.jpg",
-        next: "routefive1",
+        next: "wrapup",
     },
 
 
@@ -2034,7 +1847,7 @@ end: {
 
     Articunofight: {
         dialogue: function () {
-            const battle = battlePokemon("Articuno", "routefive1", "chosenArticuno");
+            const battle = battlePokemon("Articuno", " wrapup", "chosenArticuno");
 
             this.nextScene = battle.next;
 
@@ -2052,7 +1865,7 @@ end: {
     Articunocapture: {
 
         dialogue: function () {
-            const captureResult = catchPokemon("Articuno", "routefive1", "chosenArticuno")
+            const captureResult = catchPokemon("Articuno", " wrapup", "chosenArticuno")
 
             this.nextScene = captureResult.next;
 
@@ -2066,11 +1879,209 @@ end: {
             return this.nextScene;
         }
     },
+
+
+
     Articunorun: {
         dialogue: `You ran away from a Articuno! It’s... Confused?`,
         background: "blackscreen.jpg",
-        next: "routefive1",
+        next: "wrapup",
     },
+
+
+
+    wrapup:{
+        dialogue: "You reached the end of your adventure, now it is time to return home",
+        background: "blackscreen.jpg",
+        next: function(){
+            if (gameState.starter === "Litten") {
+                return "endingv1";
+                } else if (gameState.starter === "Froakie") {
+                return "endingv2";
+                } else if (gameState.starter === "Treecko") {
+                return "endingv3";
+                return "end";
+        }
+        }
+    
+    
+    
+    },
+
+
+
+    //endingv1//
+
+endingv1:{
+    dialogue: `Now you're on your way back to your hometown and notice a familiar figure in the distance`,
+    background: "blackscreen.jpg",
+    next: "Professorend"
+},
+
+Professorend:{
+    dialogue: `Is that ${playerData.teacher}... !?!?!`,
+        background: "Professor-ending.png",
+        next: "Professoralt",
+
+},
+
+Professoralt: {
+    dialogue: `I’ve  heard about your recent journey! Battle me, I want to see how strong you’ve become!`,
+    background: "teachtalkstoyou.png",
+    next: "Fightteach",
+},
+
+Fightteach: {
+    background: "teachtalkstoyou.png",
+     options: [
+            {
+                text: "Fight",
+                next: "fightingteach"
+            },
+        ]
+        
+},
+
+ fightingteach:{
+  dialogue: function () {
+            const battle = battlePokemon(`${playerData.teacher}`, "Fightingteachwin", "Fightingteachloss");
+
+            this.nextScene = battle.next;
+
+            return battle.text;
+        },
+
+        img: "teachtalkstoyou.png",
+
+        next: function () {
+            return this.nextScene;
+        }
+ },
+
+ Fightingteachwin: {
+    dialogue: `wow you and your Pokemon are really in sync! You have grown exponentially!`,
+    background: "teachtalksyou.png",
+    next: "end",
+
+ },
+
+ Fightingteachloss: {
+    dialogue: `You were really tough! It seems like you have more to learn but you’re not far from competing with the best of the best, keep going kid!`,
+    background: "teachtalksyou.png",
+    next: "end",
+ },
+
+//endingv2//
+
+endingv2: {
+ dialogue: `Now you're on your way back to your hometown and notice a familiar figure in the distance`,
+    background: "blackscreen.jpg",
+    next: "Friendending1",
+},
+
+Friendending1:{
+    dialogue: `Hey look it’s ${playerData.classmate}!`,
+    background: "friend!.png",
+    next: "Friendfightp2",
+},
+
+
+Friendfightp2: {
+    dialogue: `Hey! Let’s have a battle, I want to see how strong you’ve become!`,
+    background: "friend!.png",
+    next: "Friendfightp3",
+},
+
+ Friendfightp3:{
+  dialogue: function () {
+            const battle = battlePokemon(`${playerData.classmate}`, "Friendfightwin", "Friendfightloss");
+
+            this.nextScene = battle.next;
+
+            return battle.text;
+        },
+
+        img: "Friendfight!.png",
+
+        next: function () {
+            return this.nextScene;
+        }
+ },
+
+    Friendfightwin: {
+        dialogue: `It’s a shame that I lost but man, that was fun! We need to battle again soon!`,
+        background: "Friendfight!.png",
+        next: "end",
+    },
+
+    Frienddightloss: {
+        dialogue: `I must’ve been lucky, what a tough fight!`,
+        background: "Friendfight!.png",
+        next: "end",
+    },
+
+    //ending3//
+
+    endingv3:{
+        dialogue: `Now you're on your way back to your hometown and notice a familiar figure in the distance`,
+        background: "blackscreen.jpg",
+        next: "motherencounter",
+    },
+
+    motherencounter:{
+        dialogue: `What is my mom doing here?`,
+        background: "Mother.png",
+        next:"motherencounter1",
+
+    },
+motherencounter1: {
+    dialogue: `It looks like your mother is challenging you... to a battle!?!`,
+    background: "Mother.png",
+    next: "motherencounter2",
+},
+
+motherencounter2: {
+    dialogue: `If you win you can choose dinner tonight!`,
+    background: "Mother.png",
+    next: "motherencounter3",
+},
+
+motherencounter3: {
+
+ dialogue: function () {
+            const battle = battlePokemon("Mom", "motherencounterwin", "motherencounterloss");
+
+            this.nextScene = battle.next;
+
+            return battle.text;
+        },
+
+        img: "Friendfight!.png",
+
+        next: function () {
+            return this.nextScene;
+        }
+},
+
+
+motherencounterwin:{
+    dialogue: `Well I’m a woman of my word, what do you want for dinner?`,
+    background: "Mother.png",
+    next: "end",
+},
+
+motherencounterloss:{
+    dialogue: `Well now I get to choose what’s for dinner, loser!`,
+    background: "Mother.png",
+    next: "end",
+},
+
+
+end: {
+    background: "THANKYOU.png",
+},
+
+
 
 
 
