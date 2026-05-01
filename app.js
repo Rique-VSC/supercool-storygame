@@ -369,7 +369,7 @@ const scenes = {
     },
 
     RunawayWynaut: {
-        dialogue: `You successfully ran away from Wynaut...`,
+        dialogue: `You successfully ran away from Wynaut... there were no consequences.`,
         background: "blackscreen.jpg",
         next: "routetwo1",
     },
@@ -450,7 +450,7 @@ const scenes = {
     },
 
     Cubonerun: {
-        dialogue: `You successfully ran away from Cubone...`,
+        dialogue: `Cubone got upset that you ran away... he threw his bone at you`,
         background: "blackscreen.jpg",
         next: "routetwo1",
     },
@@ -529,7 +529,7 @@ const scenes = {
         }
     },
     Munchlaxrun: {
-        dialogue: `You successfully ran away from Munchlax...`,
+        dialogue: `You ran away from Munchlax... Munchlax is developing its villain arc now.`,
         background: "blackscreen.jpg",
         next: "routetwo1",
     },
@@ -694,7 +694,7 @@ const scenes = {
         }
     },
     Togepirun: {
-        dialogue: `You successfully ran away from Togepi...`,
+        dialogue: `Togepi successfully ran away from you...`,
         background: "blackscreen.jpg",
         next: "routethree1",
     },
@@ -778,7 +778,7 @@ const scenes = {
         }
     },
     Bonslyrun: {
-        dialogue: `You successfully ran away from Bonsly...`,
+        dialogue: `You ran away from Bonsly? Bonsly cried👎`,
         background: "blackscreen.jpg",
         next: "routethree1",
     },
@@ -861,7 +861,7 @@ const scenes = {
         }
     },
     Nidoranrun: {
-        dialogue: `You successfully ran away from Nidoran...`,
+        dialogue: `You ran away from Nidorino... it almost poisioned you as you ran!`,
 
         background: "blackscreen.jpg",
         next: "routethree1",
@@ -1023,7 +1023,7 @@ const scenes = {
         }
     },
     Krokorokrun: {
-        dialogue: `You successfully ran away from Krokorok...`,
+        dialogue: `You ran away from Krokorok! It chased you across the Flatlands`,
         background: "blackscreen.jpg",
         next: "routefour1",
     },
@@ -1107,7 +1107,7 @@ const scenes = {
         }
     },
     Lampentrun: {
-        dialogue: `You successfully ran away from Lampent...`,
+        dialogue: `You ran away from Lampent! It tried to chase you but ultimately gave up!`,
         background: "blackscreen.jpg",
         next: "routefour1",
     },
@@ -1189,7 +1189,7 @@ const scenes = {
         }
     },
     Hawlucharun: {
-        dialogue: `You successfully ran away from Hawlucha...`,
+        dialogue: `You ran away from Hawlucha before it could body slam you!`,
         background: "blackscreen.jpg",
         next: "routefour1",
     },
@@ -1359,7 +1359,7 @@ const scenes = {
         }
     },
     larvestarun: {
-        dialogue: `You successfully ran away from Larvesta...`,
+        dialogue: `You ran away from Larvesta... it attacked you with Ember.`,
         background: "blackscreen.jpg",
         next: "routefive1",
     },
@@ -1443,7 +1443,7 @@ const scenes = {
         }
     },
     Mareeprun: {
-        dialogue: `You successfully ran away from Mareep...`,
+        dialogue: `You ran away from Mareep? Why would you do that..`,
         background: "blackscreen.jpg",
         next: "routefive1",
     },
@@ -1525,7 +1525,7 @@ const scenes = {
         }
     },
     Hakamoorun: {
-        dialogue: `You successfully ran away from Hakamo-o...`,
+        dialogue: `You successfully ran away from Hakamo-o... there were no consequences.`,
         background: "blackscreen.jpg",
         next: "routefive1",
     },
@@ -1712,7 +1712,7 @@ const scenes = {
         }
     },
     Sogaleorun: {
-        dialogue: `You successfully ran away from Sogaleo...`,
+        dialogue: `You ran away from Solgaleo! It just stared at you..`,
         background: "blackscreen.jpg",
         next: "routefive1",
     },
@@ -1796,7 +1796,7 @@ const scenes = {
         }
     },
     Zygarderun: {
-        dialogue: `You successfully ran away from Zygarde...`,
+        dialogue: `You ran from Zygarde! It laughed at you☹️`,
         background: "blackscreen.jpg",
         next: "routefive1",
     },
@@ -1878,7 +1878,7 @@ const scenes = {
         }
     },
     Articunorun: {
-        dialogue: `You successfully ran away from Articuno...`,
+        dialogue: `You ran away from a Articuno! It’s... Confused?`,
         background: "blackscreen.jpg",
         next: "routefive1",
     },
