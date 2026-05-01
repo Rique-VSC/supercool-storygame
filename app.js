@@ -1704,7 +1704,9 @@ end: {
 
 
 
+//ending links
 
+//if (gameState.starter === "Litten") { return "endingv1"; // Professor Ending } else if (gameState.starter === "Froakie") { return "endingv2"; // Friend Ending } else if (gameState.starter === "Treecko") { return "endingv3"; // Mother Ending } return "end"; // Fallback } }, //
 
 
 
