@@ -1883,7 +1883,7 @@ const scenes = {
 
 
     Articunorun: {
-        dialogue: `You ran away from a Articuno! It’s... Confused?`,
+        dialogue: `You ran away from a Articuno! It’s... Confused why ran?`,
         background: "blackscreen.jpg",
         next: "wrapup",
     },
